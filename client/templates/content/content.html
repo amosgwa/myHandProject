@@ -1,14 +1,17 @@
 <!-- Content -->
 <template name="content">
+
+		{{#each newestPost}}
 		<div class="four columns">
-			<img src = "desk.jpg" width="100%"/>
+			<img src = {{imgurl}} width="100%"/>
 		</div>
 		<div class = "eight columns">
 			<div class="row">
-				<h5 class="title">day 0</h5>
+				<h5 class="title">day {{day}}</h5>
 			</div>
 			<div class = "row">
-				<p>Chocolate cake sweet cheesecake cake. Powder chocolate bar drage candy canes jelly beans tiramisu. Danish apple pie dessert chupa chups topping cotton candy. Chocolate cake fruitcake biscuit sugar plum carrot cake apple pie gummi bears. Icing toffee macaroon jelly croissant souffl apple pie oat cake. Ice cream jelly-o chocolate cake powder. Wafer gingerbread sugar plum. Lollipop pie chocolate cake souffl pudding gummies lollipop tootsie roll. Jelly powder lemon drops. Lollipop cheesecake drage dessert cake caramels candy cupcake. Donut sesame snaps jujubes apple pie sesame snaps candy canes toffee. Chocolate bar cotton candy macaroon halvah tart pie sweet roll.</p>
+				{{content}}
 			</div>
 		</div>
+		{{/each}}
 </template>

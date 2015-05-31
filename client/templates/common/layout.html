@@ -1,31 +1,7 @@
-<head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>...in my hands</title>
-  <meta name="description" content="What I gathered from 12 weeks internship at Google...">
-  <meta name="author" content="Amos Gwa">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-  
-  <!-- JQUERY
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
-  
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-</head>
 
 <template name="layout">
+  {{>head}}
 <body>
   <div class="container">
 	
@@ -42,12 +18,9 @@
 	<hr/>
 	
 	<div class="row footer">
-		<div class="one-third column"><button>Prev</button></div>
-		<div class="one-third column toggleA" style=" font-size: 11px; letter-spacing:.2em;"><a href="http://www.amosgwa.com" target="_blank">www.amosgwa.com</a></div>
-		<div class="one-third column"><button>Next</button></div>
-		<div class="one-third column toggleB" style=" font-size: 11px; letter-spacing:.2em;"><a href="http://www.amosgwa.com" target="_blank">www.amosgwa.com</a></div>
+		{{> navigation}}
 	</div>
 	
-    </div>
+  </div>
 </body>
 </template>

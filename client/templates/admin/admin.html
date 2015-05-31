@@ -1,0 +1,15 @@
+<template name="admin">
+	<form>
+	<div class="row">
+	    <div class="columns">
+		  <label for="exampleMessage">Picture</label>
+			 {{> upload_semanticUI callbacks=finishedUpload}}
+		  <label for="exampleMessage">Message</label>
+		  <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage" name = "content"></textarea>
+    	</div>
+
+	  </div>
+
+	  <input class="button-primary" type="submit" value="Submit">
+	</form>
+</template>
