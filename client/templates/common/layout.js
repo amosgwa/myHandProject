@@ -1,10 +1,18 @@
+//Keeps track of current page
+Session.setDefault('currentPage', 0);
+
+Meteor.autorun(function(){
+	Meteor.subscribe("posts", Session.get('currentPage'));
+});
+
 Meteor.startup(function() {
 	Template.layout.rendered = function(){
-	//var postDay = Template._globalHelpers('getPostDay')[0];
 
-	//Session.set('postDay', postDay);
-	//console.log(Session.get('postDay'));
-	//console.log(Posts.find().fetch());
+
+		$('.currentContent').css('visibility','visible').hide().stop().fadeIn('slow');
+
+
+		$('.footer').css('visibility','visible').hide().stop().fadeIn('slow');
 
 		var width = $(window).width();
 		//console.log(width);
@@ -19,13 +27,9 @@ Meteor.startup(function() {
 			$(".toggleA").show();
 			//alert("B hide A show");
 		}
+
 	};
 });
 
 //Current page is layout
 Session.set('page', 'layout');
-
-//Get todayPost
-// Template.registerHelper("getPostDay", function () {
-//     return Counter.find().fetch();
-// });

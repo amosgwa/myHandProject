@@ -1,19 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400);
+
 body{
-		background-color:#f4f0ee;
-		color: #404040;
+		background-color:#f7f8f8;
 	}
 	a{
 		text-decoration : none;
+		color: #929292 !important;
+	}
+	a:hover{
 		color: #F64747 !important;
+	}
+	.siteTitle{
+		/**text-align: right;*/
+		font-family: 'Amatic SC', cursive;
+		letter-spacing: 3px;
+		font-size: 3em;
+		margin-bottom: 50px;
+	}
+	.siteTitle hr{
+		margin-top: 0px !important;
+		margin-bottom: 10px;
+	}
+	.siteTitle .siteDescription{
+		letter-spacing: normal;
+		font-size: 13px;
+		line-height: 25px;
+		font-family: 'Open Sans', sans-serif !important;
+		font-style: italic;
+	}
+	.content{
+		font-size: 13px;
+		line-height: 25px;
+		font-family: 'Open Sans', sans-serif !important;
+	}
+	.title{
+		font-family: 'Amatic SC', cursive;
+		font-size: 2em;
+		letter-spacing: 2px;
 	}
 	.footer{
 		text-align:center;
+		visibility: hidden;
 	}
 	.footer div{
 		margin-bottom: 10px;
 	}
+	.gallery img{
+		margin-bottom: 25px;
+	}
+	.currentContent{
+		visibility: hidden;
+	}
 	img{
-		border-radius: 5px;
+		border-radius: 10px;
 		margin-bottom: 15px;
 	}
 	.title{

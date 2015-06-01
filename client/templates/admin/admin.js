@@ -1,4 +1,6 @@
 Session.set('imgUrl', null);
+
+//Current page is admin
 Session.set('page', 'admin');
 
 Template.admin.helpers({
@@ -18,6 +20,7 @@ Template.admin.events({
 		//console.log(imageUrl);
 		var e = {
 			imageURL : Session.get('imgUrl'),
+			title : event.target.title.value,
 			postContent : event.target.content.value,
 		}
 		console.log(e);

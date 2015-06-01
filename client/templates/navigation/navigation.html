@@ -1,8 +1,20 @@
 <template name="navigation">
 	{{#if validPage}}
-	<div class="one-third column"><button>Prev</button></div>
+	<div class="one-third column">
+		{{#if showPrev}}
+		<button id="prevPost">Next</button>
+		{{else}}
+		&nbsp;
+		{{/if}}
+	</div>
 	<div class="one-third column toggleA" style=" font-size: 11px; letter-spacing:.2em;"><a href="http://www.amosgwa.com" target="_blank">www.amosgwa.com</a></div>
-	<div class="one-third column"><button>Next</button></div>
+	<div class="one-third column">
+		{{#if showNext}}
+		<button id="nextPost">Prev</button>
+		{{else}}
+		&nbsp;
+		{{/if}}
+	</div>
 	<div class="one-third column toggleB" style=" font-size: 11px; letter-spacing:.2em;"><a href="http://www.amosgwa.com" target="_blank">www.amosgwa.com</a></div>
 	{{else}}
 	<div class="one-third column">&nbsp;</div>

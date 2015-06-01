@@ -3,7 +3,7 @@ Meteor.methods({
 		Posts.insert({
 			content : e.postContent,
 			date : new Date(),
-			day : 0,
+			title : e.title,
 			imgurl : e.imageURL
 		})
 	}

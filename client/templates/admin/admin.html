@@ -2,10 +2,12 @@
 	<form>
 	<div class="row">
 	    <div class="columns">
-		  <label for="exampleMessage">Picture</label>
+		  <label for="picture">Picture</label>
 			 {{> upload_semanticUI callbacks=finishedUpload}}
-		  <label for="exampleMessage">Message</label>
-		  <textarea class="u-full-width" placeholder="Hi Dave …" id="exampleMessage" name = "content"></textarea>
+		 	<label for="title">Title</label>
+		 	<input class="u-full-width" type="text" id="titleInput" name = "title">
+		  <label for="content">Message</label>
+		  <textarea class="u-full-width" placeholder="Hi Dave …" id="contentInput" name = "content"></textarea>
     	</div>
 
 	  </div>
