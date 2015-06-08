@@ -6,5 +6,10 @@ Meteor.methods({
 			title : e.title,
 			imgurl : e.imageURL
 		})
+	},
+	'removeThisPost' : function(thisPostId){
+		Posts.remove({
+			_id : thisPostId
+		})
 	}
 });

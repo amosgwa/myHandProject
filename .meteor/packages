@@ -10,3 +10,6 @@ iron:router
 jquery
 tomi:upload-server
 tomi:upload-jquery
+ian:accounts-ui-bootstrap-3
+twbs:bootstrap
+accounts-password

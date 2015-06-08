@@ -1,5 +1,10 @@
 Meteor.publish("posts", function(skipCursor){
-	return Posts.find({}, {sort : {date : -1}, skip: skipCursor});
+	return Posts.find({}, {sort : {date : -1},skip: skipCursor});
+});
+
+//users
+Meteor.publish('users', function() {
+	return Meteor.users.find({_id:this.userId});
 });
 
 Meteor.startup(function () {

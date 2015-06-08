@@ -29,6 +29,18 @@ body{
 		font-family: 'Open Sans', sans-serif !important;
 		font-style: italic;
 	}
+	.adminTools{
+		font-size: 13px;
+		font-family: 'Open Sans';
+		color: red;
+		float:right;
+		letter-spacing: normal;
+		text-decoration: underline;
+	}
+	.adminTools span{
+		margin-right: 10px;
+		cursor: pointer;
+	}
 	.content{
 		font-size: 13px;
 		line-height: 25px;
