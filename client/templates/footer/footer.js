@@ -1,4 +1,4 @@
-Template.navigation.helpers({
+Template.footer.helpers({
 	//Check if the navigation is on the valid page
 	validPage : function(){
 		if(Router.current().options.route._path != '/'){
@@ -21,7 +21,7 @@ Template.navigation.helpers({
 	}
 });
 
-Template.navigation.events({
+Template.footer.events({
 	'click #prevPost' : function(){
 		$('.currentContent').css('visibility','visible').hide().fadeIn('slow');
 		console.log('Clicked prev');

@@ -1,0 +1,21 @@
+<template name="banner">
+	<div class="row" style="margin-top: 50px">
+
+		<div class="siteTitle">
+			<span>
+				<a href="{{pathFor route='gallery'}}">Spaces between my fingers...</a>
+			</span>
+			<hr/> 
+			<div class="siteDescription">
+				A day in a picture and a sentence...
+			</div>
+		</div>
+	</div>	
+
+	{{#if currentUser}}
+	<div class="row menu">
+		{{> loginButtons}}
+	</div>
+	{{/if}}
+
+</template>

@@ -7,6 +7,11 @@ Meteor.publish('users', function() {
 	return Meteor.users.find({_id:this.userId});
 });
 
+//meteor login config
+Accounts.config({
+  forbidClientAccountCreation : true
+});
+
 Meteor.startup(function () {
   UploadServer.init({
     tmpDir: process.env.PWD + '/.uploads/tmp',

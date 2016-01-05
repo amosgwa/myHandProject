@@ -1,28 +1,12 @@
 <template name="layout">
-  {{>head}}
-<body>
-  <div class="container">
-	
-	<div class="row" style="margin-top: 50px">
-		<div class="siteTitle">Between my fingers...
-    <hr/> 
-    <div class="siteDescription">
-    This is a pictorial journal for the Summer 2015. I will be interning in the Bay area, and would like to share the things that will fill the space between my fingers.
-    </div>
-    </div>
-    
-	</div>
-	
-	
-  <!-- Generated data
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	{{> yield}}
-	
-	<div class="footer">
-    <hr>
-		<div class="row"> {{> navigation}}</div>
-	</div>
-	
-  </div>
-</body>
+	{{>head}}
+	<body>
+		<div class="container">
+
+			{{> banner}}
+			{{> yield}}
+			{{> footer}}
+
+		</div>
+	</body>
 </template>

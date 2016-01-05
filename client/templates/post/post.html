@@ -1,0 +1,23 @@
+<template name="post">
+	<div class="row">
+		<div class="five columns postimg">
+			<img src = {{imgurl}} width="100%"/>
+		</div>
+		<div class = "seven columns">
+			<div class="row">
+				{{#if currentUser}}
+				<span class="adminTools">
+					<span class="deletePost">Delete</span>
+					<span class="editPost">Edit</span>
+				</span>
+				{{/if}}
+			</div>
+			<div class = "row content">
+				<div class="quote">
+					<p>{{content}}</p>
+					<span class="date">{{formatTime date}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

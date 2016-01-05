@@ -2,9 +2,10 @@
 	
 	<div class="row">
 		{{#each galleryPosts}}
-			<div class="four columns gallery">
-				<img src = {{imgurl}} width="100%"/>
-			</div>
+		<div class="four columns gallery">
+			
+			<a href="/post/{{_id}}"><img src = {{imgurl}} width="100%"/></a>
+		</div>
 		{{/each}}
 	</div>
 </template>

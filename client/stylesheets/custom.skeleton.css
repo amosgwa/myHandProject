@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
 
 body{
 		background-color:#f7f8f8;
@@ -17,6 +18,12 @@ body{
 		letter-spacing: 3px;
 		font-size: 3em;
 		margin-bottom: 50px;
+	}
+	.siteTitle a:hover{
+		text-decoration: none;
+	}
+	.siteTitle a:focus{
+		text-decoration: none;
 	}
 	.siteTitle hr{
 		margin-top: 0px !important;
@@ -41,10 +48,26 @@ body{
 		margin-right: 10px;
 		cursor: pointer;
 	}
+	.postimg img{
+		box-shadow: 1px 2px 1px #d1d1d1;
+	}
 	.content{
-		font-size: 13px;
-		line-height: 25px;
-		font-family: 'Open Sans', sans-serif !important;
+		font-size: 23px;
+	    line-height: normal;
+	    font-family: 'Lato', sans-serif !important;
+	    text-align: center;
+	    font-weight: 300;
+	    position: relative;
+	    min-height: 250px;
+	}
+	.content .quote{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+	}
+	.content .date{
+		font-size: 15px;
 	}
 	.title{
 		font-family: 'Amatic SC', cursive;
@@ -53,24 +76,39 @@ body{
 	}
 	.footer{
 		text-align:center;
-		visibility: hidden;
 	}
 	.footer div{
 		margin-bottom: 10px;
 	}
-	.gallery img{
-		margin-bottom: 25px;
+	.gallery{
+		margin-bottom: 4%;
 	}
 	.currentContent{
 		visibility: hidden;
 	}
-	img{
-		border-radius: 10px;
-		margin-bottom: 15px;
+	.gallery img{
+		opacity: 0.7;
+	}
+	.gallery img:hover{
+		opacity: 1;
 	}
 	.title{
 	}
 	
+
+	/*Insert page*/
+	#images {
+		display: none;
+	}
+
+	#images img{
+		width: 150px;
+	}
+
+	#images #delete{
+		cursor : pointer;
+	}
+
 	/* Mobile first queries */
 
 	/* Larger than mobile */

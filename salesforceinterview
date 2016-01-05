@@ -1,0 +1,93 @@
+Define a function that takes an array of strings, and returns the most commonly occurring string in that array
+
+var arr = ["cat", "dog", "cat", "cat", "dog", "alphabet"]
+commonStr(arr)
+>> cat
+
+function mostFrequent(arr) {
+    var mapR = {};
+    var largest = 0;
+    var result;
+    
+    for(var i = 0; i < arr.length ; i++) {
+        if(mapR[arr[i]] === undefined) {
+            mapR[arr[i]] = 0;
+        }
+        mapR[arr[i]] = mapR[arr[i]] + 1;
+        if(mapR[arr[i]] > largest) {
+            result = arr[i];
+            largest = mapR[arr[i]];
+        } 
+    }
+    
+    return result;
+}
+
+console.log(mostFrequent(["cat","cat","dog","dog","dog","dog","dog","dog"]));
+
+/******/
+
+log a fibonacci sequence of n length
+fibonacci(6) {
+
+}
+>> "1 1 2 3 5 8"
+
+function fibonacci(n) {
+    var result = [1,1];
+    
+    for(var i = 0; i < n-2 ; i++ ) {
+        result.push(result[i] + result[i+1]);
+    }
+    return result;
+}
+
+console.dir(fibonacci(6));
+
+/****************/
+
+
+.class-name #id-name {
+    color: red;
+} -- > 2nd
+
+.class-name1 {
+    color: black;
+} --> 3rd
+
+.class-name3 {
+    color: green;
+}
+
+<div class="class-name1 classname-2 classname-3"></div>
+
+#id-name :first-child {
+    color: blue;
+} --> 1st
+
+/****************/
+
+flexbox
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://philipwalton.github.io/solved-by-flexbox/
+
+/****************/
+
+var User = {
+     count: 1,
+     getCount: function() {
+         return this.count;
+    }
+};
+
+
+console.log(User.getCount());
+>> // line 1 : 1
+
+var func = User.getCount;
+console.log(func());
+>> // line 2 : 
+
+var func = User.getCount.bind(User);
+console.log(func());
+>> // line 3 : 1

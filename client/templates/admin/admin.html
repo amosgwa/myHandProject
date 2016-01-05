@@ -1,17 +1,28 @@
 <template name="admin">
 	<form>
-	<div class="row">
-	    <div class="columns">
-		  <label for="picture">Picture</label>
-			 {{> upload_semanticUI callbacks=finishedUpload}}
-		 	<label for="title">Title</label>
-		 	<input class="u-full-width" type="text" id="titleInput" name = "title">
-		  <label for="content">Message</label>
-		  <textarea class="u-full-width" placeholder="Hi Dave …" id="contentInput" name = "content"></textarea>
-    	</div>
+		<div class="row">
+			<div class="columns">
+				{{#if currentUser}}
+				<label for="picture">Picture</label>
+				{{> upload_semanticUI callbacks=finishedUpload}}
 
-	  </div>
+				<div id="images">
+				<img src="" id="uploadedimage"/>
+				<span id="delete">Delete</span>
 
-	  <input class="button-primary" type="submit" value="Submit">
+				</div>
+
+				<label for="content">Message</label>
+				<textarea class="u-full-width" placeholder="Hi Dave …" id="contentInput" name = "content"></textarea>
+				<label class="draftBox">
+					<input type="checkbox" id="draft">
+					<span class="label-body">Draft</span>
+				</label>
+				<input class="button-primary" type="submit" value="Submit">
+				{{else}}
+				{{> loginButtons}}
+				{{/if}}
+			</div>
+		</div>
 	</form>
 </template>
