@@ -1,10 +1,19 @@
 <template name="admin">
-	<form>
+	<form method="POST" enctype="multipart/form-data">
 		<div class="row">
 			<div class="columns">
 				{{#if currentUser}}
 				<label for="picture">Picture</label>
-				{{> upload_semanticUI callbacks=finishedUpload}}
+
+				<input type="file" class="jqUploadclass" data-form-data='{{ submitData }}'>
+		        {{#with infoLabel}}
+		            {{ infoLabel}} <button class="start">StartUpload</button>
+		            <div style="width: 200px; height: 30px; border: 1px solid black">
+		                <div style="background: red; height: 30px; width: {{ progress }}">
+		                    {{ progress }}
+		                </div>
+		            </div>
+		        {{/with}}
 
 				<div id="images">
 				<img src="" id="uploadedimage"/>

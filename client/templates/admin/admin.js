@@ -1,5 +1,13 @@
 Session.set('fileInfo', null);
 
+Template.admin.created = function() {
+	Uploader.init(this);
+}
+
+Template.admin.rendered = function () {
+	Uploader.render.call(this);
+};
+
 //Current page is admin
 Session.set('page', 'admin');
 
@@ -13,6 +21,25 @@ Template.admin.helpers({
 				showUploadedImage(Session.get('fileInfo').url);
 			}
 		}
+	},
+	'infoLabel': function() {
+		var instance = Template.instance();
+
+		// we may have not yet selected a file
+		var info = instance.info.get();
+		if (!info) {
+			return;
+		}
+
+		var progress = instance.globalInfo.get();
+
+		// we display different result when running or not
+		return progress.running ?
+		info.name + ' - ' + progress.progress + '% - [' + progress.bitrate + ']' :
+		info.name + ' - ' + info.size + 'B';
+	},
+	'progress': function() {
+		return Template.instance().globalInfo.get().progress + '%';
 	}
 });
 
@@ -20,31 +47,12 @@ Template.admin.events({
 	'click #delete' : function(event){
 		console.log("Removed");
 		$("#images").toggle("slow");
-		if(Session.get('fileInfo')) {
+		if(Session.get('fileInfo') && !Session.get('fileInfo').error) {
 			Meteor.call('removeImage', Session.get('fileInfo').path);
 		}
 	},
 	'submit form' : function(event){
 		event.preventDefault();
-		var e = {
-			imageURL : Session.get('fileInfo').url,
-			fileinfo : Session.get('fileInfo'),
-			draft : document.getElementById("draft").checked,
-			postContent : event.target.content.value,
-		}
-		console.log(e);
-
-		// Insert post.
-		Meteor.call('insertPost',e, function(error, result) {
-
-			// Remove the image upon failure.
-			if(error) {
-				console.dir('Error Submission');
-				// Only remove after the image is uploaded.
-				if(Session.get('fileInfo')) {
-					Meteor.call('removeImage', Session.get('fileInfo').path);
-				}
-			}
-		});
+		Uploader.startUpload.call(Template.instance(), event);
 	}
 });
